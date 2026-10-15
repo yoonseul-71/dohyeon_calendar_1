@@ -1,0 +1,68 @@
+DOHYEON CALENDAR - 초보자용 안내
+
+[파일 설명]
+index.html : 페이지 구조
+style.css  : 색상과 디자인
+script.js  : 달력 이동, 날짜 클릭, 다시보기 팝업 동작
+ data.js   : 직접 입력하는 방송 기록
+assets/thumbnails/ : 직접 지정한 썸네일 이미지 저장 폴더
+
+[1. 방송 기록 추가하기]
+1) data.js 파일을 메모장 또는 VS Code로 엽니다.
+2) window.DOHYEON_CALENDAR_DATA = [ 와 ]; 사이에 기록을 추가합니다.
+3) 날짜는 YYYY-MM-DD 형식으로 입력합니다. 예: 2024-08-14
+4) status는 regular / collab / break / special 중 하나를 사용합니다.
+5) videos 배열 안에 다시보기 제목, 주소, 이미지 경로를 입력합니다.
+6) 저장하고 사이트를 새로고침하면 반영됩니다.
+
+[2. 기록 예시]
+{
+  date: "2024-08-18",
+  status: "regular",
+  title: "정규방송",
+  subtitle: "다시보기 2개",
+  videos: [
+    {
+      title: "방송 제목",
+      url: "https://www.youtube.com/watch?v=영상ID",
+      image: "assets/thumbnails/2024-08-18-01.jpg",
+      kind: "정규방송"
+    },
+    {
+      title: "두 번째 방송 제목",
+      url: "https://www.youtube.com/watch?v=다른영상ID",
+      image: "assets/thumbnails/2024-08-18-02.jpg",
+      kind: "합방"
+    }
+  ]
+},
+
+주의: 배열 안에서 항목과 항목 사이에는 쉼표(,)를 넣되, 마지막 항목 뒤에는 쉼표를 넣지 않아도 됩니다.
+실제 제목/주소/이미지는 예시를 본인의 기록으로 바꾸세요.
+
+[3. 썸네일 이미지 넣기]
+1) 썸네일 이미지를 assets/thumbnails 폴더에 저장합니다.
+2) 파일명을 예: 2024-08-18-01.jpg 처럼 정합니다.
+3) data.js의 image 값에 "assets/thumbnails/2024-08-18-01.jpg"를 입력합니다.
+4) 파일명 대소문자와 확장자(.jpg, .png, .webp)가 정확히 같아야 합니다.
+5) 이미지 파일도 GitHub 저장소에 함께 업로드해야 온라인에서 보입니다.
+
+[4. GitHub Pages에 공개하기]
+1) github.com에 로그인합니다.
+2) 오른쪽 위 + 버튼 > New repository를 누릅니다.
+3) Repository name에 dohyeon-calendar 를 입력합니다.
+4) Public을 선택하고 Create repository를 누릅니다.
+5) Add file > Upload files를 누릅니다.
+6) 이 폴더 안의 index.html, style.css, script.js, data.js, README_KO.txt와 assets 폴더를 업로드합니다.
+   폴더를 끌어다 놓기 어렵다면 파일을 한 번에 선택하고, 썸네일은 assets/thumbnails 경로가 유지되게 업로드하세요.
+7) Commit changes를 누릅니다.
+8) 저장소 Settings > Pages로 이동합니다.
+9) Build and deployment의 Source를 Deploy from a branch로 설정합니다.
+10) Branch를 main, 폴더를 /(root)로 선택하고 Save를 누릅니다.
+11) 잠시 기다린 뒤 같은 Pages 화면에 표시되는 사이트 주소를 엽니다.
+   보통 주소 형태는 https://깃허브아이디.github.io/dohyeon-calendar/ 입니다.
+
+[중요]
+- 이 템플릿의 2024-08-14 및 2024-08-15 기록은 작동 방식을 보여 주는 샘플입니다. 실제 기록으로 교체하거나 삭제하세요.
+- data.js를 수정할 때 따옴표와 쉼표를 지켜 주세요. 문법 오류가 나면 달력이 표시되지 않을 수 있습니다.
+- 공개 저장소에 올린 데이터와 이미지는 누구나 볼 수 있으므로 공개해도 되는 자료만 넣으세요.
